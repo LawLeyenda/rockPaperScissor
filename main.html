@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<script>
-    function computerMove(){
-        var ranNum = Math.floor(Math.floor(3)*Math.random());
-        if(ranNum == 1){
-            return "rock";
-           }else if(ranNum == 2){
-            return "paper";
-            }
-            else return "scissors";   
-    }
-    
-
-    
-
-    function playRound(playerSelection,computerSelection){
-        if(playerSelection === computerSelection){
-            return console.log("Tie! You both played" + playerSelection);
-        } else if((playerSelection == "rock") && (computerSelection == "scissors")){
-            return console.log("The player wins!" + playerSelection + " beats " + computerSelection + "!");
-        }
-          else if((playerSelection == "scissors") && (computerSelection == "rock")){
-            return console.log("The computer wins!" + computerSelection + " beats " +playerSelection+ "!");
-        }
-          else if((playerSelection == "paper") && (computerSelection == "rock")){
-            return console.log("The player wins!" + playerSelection + " beats " + computerSelection + "!");    
-        }
-          else if((playerSelection == "paper") && (computerSelection == "scissors")){
-            return console.log("The computer wins!" + computerSelection + " beats " + playerSelection + "!");
-        } else 
-            return "Error";
-    }
-    function game(){
-        playerSelection = prompt("Rock Paper or Scissors?", "");
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerMove();
-        playRound(playerSelection,computerSelection);
-    }
+<html>
+<head>
+    <title>RockPaperScissor</title>
+    <link rel="stylesheet" href="/Users/seangelb/The_Project_Odin/rockPaperScissor/RSP.css">
+    <link rel="icon" href="/Users/seangelb/The_Project_Odin/rockPaperScissor/rock.jpg"/>
+    <script type="text/javascript" src="/Users/seangelb/The_Project_Odin/rockPaperScissor/rps.js"></script>
+</head>
+<body>
+   <div class="titleBox">
+       <h1 class="title">Rock Paper Scissors</h1>
+   </div>
 
 
-</script>
+   <div class= "buttonBox">
+    <button id="rock" class="rock" onclick="game(this.id)"><img src="/Users/seangelb/The_Project_Odin/rockPaperScissor/rock.jpg" alt=Rock></button>
+    <button id="paper" class="paper" onclick="game(this.id)"><img src="/Users/seangelb/The_Project_Odin/rockPaperScissor/paper.jpg" alt=Paper></button>
+    <button id="scissors" class="scissors" onclick="game(this.id)"><img src="/Users/seangelb/The_Project_Odin/rockPaperScissor/scissors.jpg" alt=Scissors></button>
+   </div>
+
+   <p id= "output">
+   </p>
+   <p id="score">
+       Score:
+   </p>
+</body>
+<footer>
+    <p class="creds">Created by Sean Gelb <a href="https://github.com/LawLeyenda"></a></p>
+</footer>
+</html>
